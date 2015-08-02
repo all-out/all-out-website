@@ -1,7 +1,10 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>All-Out</title>
+        <link rel="stylesheet" href="{% static 'home/bootstrap/css/bootstrap.min.css' %}">
     </head>
     <body>
         <h1>Landing Page</h1>
@@ -12,5 +15,8 @@
             <li>"moviepicker" - movie selection and advertisement</li>
             <li>"guides" - onboarding, guides and how-tos</li>
         </ul>
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="{% static 'home/bootstrap/js/bootstrap.min.js' %}"></script>
     </body>
 </html>
