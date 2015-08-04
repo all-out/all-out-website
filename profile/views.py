@@ -20,7 +20,7 @@ def login(request):
 
     # if a user is already logged in, redirect to the front page
     if request.user.is_authenticated():
-        return redirect('home')
+        return redirect('home:home')
 
     # if the hit to this URL was a POST (not GET or DELETE or whatever)
     if request.method == 'POST':
@@ -40,7 +40,7 @@ def login(request):
 
                 # then go ahead and log the user in and redirect to front page
                 auth_login(request, user)
-                return redirect('home')
+                return redirect('home:home')
 
             # if the user's account is not active
             else:
@@ -63,4 +63,4 @@ def login(request):
 
 def logout(request):
     auth_logout(request)
-    return redirect('home')
+    return redirect('home:home')

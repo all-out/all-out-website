@@ -10,19 +10,35 @@
 
                 <h1>
                     {% if user.is_authenticated %}
-                        Welcome, {{ user.username }}:
+                        Welcome, {{ user.username }}
                     {% else %}
                         Public Landing Page
                     {% endif %}
                 </h1>
-                <ul>
-                    <li>"profile" - information associated with users</li>
-                    <li>"home" - landing page</li>
-                    <li>"lootparser" - asset management</li>
-                    <li>"lightswitch" - wormhole control</li>
-                    <li>"moviepicker" - movie selection and advertisement</li>
-                    <li>"guides" - onboarding, guides and how-tos</li>
-                </ul>
+
+                <hr>
+
+                <h2>Site Modules:</h2>
+
+                <div>
+                    <a class="list-group-item disabled" href="#">
+                        "profile" - information associated with users</a>
+
+                    <a class="list-group-item" href="{% url 'home:home' %}">
+                        "home" - landing page</a>
+
+                    <a class="list-group-item disabled" href="#">
+                        "lootparser" - asset management</a>
+
+                    <a class="list-group-item disabled" href="#">
+                    "lightswitch" - wormhole control</a>
+
+                    <a class="list-group-item" href="{% url 'movies:home' %}">
+                        "moviepicker" - movie selection and advertisement</a>
+
+                    <a class="list-group-item disabled" href="#">
+                        "guides" - onboarding, guides and how-tos</a>
+                </div>
 
             </div>
         </div>
