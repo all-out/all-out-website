@@ -1,0 +1,6 @@
+{% for choice in choices %}
+    <button data-movie-id="{{ choice.id }}" class="list-group-item vote-toggle {% if choice in user.watcher.votes.all %} active {% endif %}">
+        {{ choice.title }} [{{choice.release_year}}]
+        <span class="badge">{{ choice.vote_count }}</span>
+    </button>
+{% endfor %}

@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^home/', include('home.urls')),
     url(r'^profile/', include('profile.urls')),
+    url(r'^movies/', include('moviepicker.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

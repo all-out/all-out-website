@@ -1,0 +1,36 @@
+{% extends "project/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <h1>All-Out Movie Poll</h1>
+
+                <h2>                    
+                    {% if user.is_authenticated %}
+                        Welcome, {{ user.username }}:
+                    {% else %}
+                        Please log in to vote:
+                    {% endif %}
+                </h2>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="results" class="list-group"></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+{% block js %}
+    <script src="{% static 'moviepicker/js/moviepicker.js' %}" type="text/javascript"></script>
+{% endblock js %}

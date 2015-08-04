@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'home',
     'profile',
+    'moviepicker',
 )
 
 MIDDLEWARE_CLASSES = (
