@@ -1,9 +1,13 @@
 {% for choice in choices %}
-    <button data-movie-id="{{ choice.id }}" class="list-group-item vote-toggle {% if choice in user.watcher.votes.all %} active {% endif %}">
+    <a href="#" data-movie-id="{{ choice.id }}" class="
+        list-group-item
+        vote-toggle
+        {% if choice in user.watcher.votes.all %} active {% endif %}
+        {% if not user.is_authenticated %} disabled {% endif %}">
         {{ choice.title }}
         {% if choice.release_year %}
             [{{choice.release_year}}]
         {% endif %}
         <span class="badge">{{ choice.vote_count }}</span>
-    </button>
+    </a>
 {% endfor %}
