@@ -1,0 +1,11 @@
+#results .table {
+    margin-bottom: 0px;
+}
+
+#results .table td {
+    border-top: none;
+}
+#results .table th {
+    border-top: none;
+    border-bottom: 1px solid #ddd;
+}

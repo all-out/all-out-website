@@ -1,7 +1,5 @@
 from django.contrib import admin
 
-from moviepicker.models import Movie, Watcher
+from moviepicker.models import Movie
 
-# Register your models here.
 admin.site.register(Movie)
-admin.site.register(Watcher)

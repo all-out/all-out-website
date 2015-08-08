@@ -20,17 +20,17 @@ def get_results(request):
 
 
 def vote_toggle(request):
-    # get the watcher and the movie from the POST request
-    watcher = request.user.watcher
+    # get the user and the movie from the POST request
+    user = request.user
     movie = Movie.objects.get(id=int(request.POST['movie_id']))
 
     # VOTE: (the user hasn't voted for this movie yet)
-    if movie not in watcher.votes.all():
-        movie.votes.add(watcher)
+    if movie not in user.votes.all():
+        movie.votes.add(user)
 
     # UNVOTE: (the user has already voted for this movie)
     else:
-        movie.votes.remove(watcher)
+        movie.votes.remove(user)
 
     # save the movie to update its vote_count and return a success
     movie.save()

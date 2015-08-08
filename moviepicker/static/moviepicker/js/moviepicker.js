@@ -24,7 +24,7 @@ function loadPoll() {
  */
 $('#results').on('click', '.vote-toggle', function() {
     var movie_id = $(this).attr('data-movie-id')
-    var active = $(this).hasClass('active')
+    var voted = $(this).hasClass('success')
 
     $.ajax({
         url: '/movies/vote-toggle/',
@@ -36,10 +36,10 @@ $('#results').on('click', '.vote-toggle', function() {
             xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'))
         },
         success: function() {
-            if (active) {
-                $(this).removeClass('active')
+            if (voted) {
+                $(this).removeClass('success')
             } else {
-                $(this).addClass('active')
+                $(this).addClass('success')
             }
             loadPoll()
         },

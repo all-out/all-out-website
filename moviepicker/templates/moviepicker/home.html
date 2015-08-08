@@ -2,28 +2,31 @@
 
 {% load staticfiles %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'moviepicker/css/moviepicker.css' %}">
+{% endblock css %}
+
+
 {% block content %}
 
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
 
-                <h1>All-Out Movie Poll</h1>
+                <h1 class="text-center">All-Out Movie Poll</h1>
+                <hr>
 
-                <h2>                    
-                    {% if user.is_authenticated %}
-                        Welcome, {{ user.username }}:
-                    {% else %}
-                        Please log in to vote:
-                    {% endif %}
-                </h2>
+                {% if not user.is_authenticated %}
+                    <p class="text-center">Please log in to vote or submit suggestions.<p>
+                {% endif %}
 
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div id="results" class="list-group"></div>
+        <div class="panel">
+            <div class="row">
+                <div id="results" class="col-sm-12">
+                </div>
             </div>
         </div>
     </div>

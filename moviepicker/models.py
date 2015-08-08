@@ -12,7 +12,7 @@ class Movie(models.Model):
     shown = models.BooleanField(default=False)
     title = models.CharField(max_length=255)
     vote_count = models.IntegerField(default=0)
-    votes = models.ManyToManyField('Watcher', related_name='votes', blank=True)
+    votes = models.ManyToManyField(User, related_name='votes', blank=True)
 
     def save(self, *args, **kwargs):
         if self.id:
@@ -21,10 +21,3 @@ class Movie(models.Model):
 
     def __unicode__(self):
         return '{0} [{1}]'.format(self.title, self.release_year)
-
-
-class Watcher(models.Model):
-    user = models.OneToOneField(User)
-
-    def __unicode__(self):
-        return self.user.username
