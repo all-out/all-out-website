@@ -35,8 +35,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'home',
-    'profile',
     'moviepicker',
+    'profile',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -96,5 +96,8 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Custom User Model
+AUTH_USER_MODEL = 'profile.User'
 
 from settings_secret import *
